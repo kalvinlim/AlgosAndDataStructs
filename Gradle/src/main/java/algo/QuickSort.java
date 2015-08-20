@@ -5,9 +5,11 @@ import java.util.Arrays;
 /**
  * Created by Kalvin on 8/17/2015.
  */
-public class QuickSort {
+public class QuickSort implements SortAlgorithm{
 
-    public static int[] sort(int[] input){
+
+    @Override
+    public int[] sort(int[] input){
         if(input == null || input.length == 0){
             return null;
         }
@@ -15,7 +17,7 @@ public class QuickSort {
 
         return input;
     }
-    private static void quickSort(int[] input, int low, int high){
+    private void quickSort(int[] input, int low, int high){
         int leftIndex = low, rightIndex = high;
         int pivot = input[leftIndex + (rightIndex - leftIndex ) / 2];
 
@@ -41,10 +43,9 @@ public class QuickSort {
 
     }
 
-    private static void swap(int[] input, int low, int high){
+    private void swap(int[] input, int low, int high){
         int temp = input[low];
         input[low] = input[high];
         input[high] = temp;
     }
-
 }

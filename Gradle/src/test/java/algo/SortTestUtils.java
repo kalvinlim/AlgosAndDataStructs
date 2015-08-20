@@ -1,3 +1,5 @@
+package algo;
+
 import algo.QuickSort;
 import org.junit.Test;
 
@@ -6,10 +8,10 @@ import java.util.HashMap;
 /**
  * Created by Kalvin on 8/17/2015.
  */
-public class QuickSortTest {
+public abstract class SortTestUtils {
 
-    @Test
-    public void sortTest(){
+    public HashMap<int[], int[]> generateTestMap(){
+
         HashMap<int[], int[]> sortTests = new HashMap<>();
 
         for(int[] array : sortTests.keySet()){
@@ -25,10 +27,8 @@ public class QuickSortTest {
             sortTests.put(new int[]{36, 69, 22, 89, 81, 87, 9, 3}, new int[] {2, 5, 8, 21, 22, 42, 47, 56});
             sortTests.put(new int[]{43, 47, 13, 37, 76, 30, 20, 31}, new int[] {8, 18, 19, 22, 27, 36, 86, 95});
             sortTests.put(new int[]{1, 92, 3, 12, 93, 100, 44, 51}, new int[]{3, 9, 22, 36, 69, 81, 87, 89});
-            //System.out.println("Sorting:" + Arrays.toString(array) + ", result: " + Arrays.toString(QuickSort.sort(array)));
-            assert array.equals(QuickSort.sort(array));
         }
-
+        return sortTests;
     }
 
 }
